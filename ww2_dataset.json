@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "World War 2 Casualties API",
+    "version": "1.0.0",
+    "description": "API to retrieve historical data on military and civilian deaths during World War II by country."
+  },
+  "paths": {
+    "/countries": {
+      "get": {
+        "summary": "Get list of countries with historical death data",
+        "responses": {
+          "200": {
+            "description": "A list of countries with death statistics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Country": {
+                        "type": "string",
+                        "example": "Albania"
+                      },
+                      "Total_population": {
+                        "type": "string",
+                        "example": "1,073,000"
+                      },
+                      "Military_deaths": {
+                        "type": "string",
+                        "example": "30,000"
+                      },
+                      "Civilian_deaths": {
+                        "type": "string",
+                        "example": "70,000"
+                      },
+                      "Total_deaths": {
+                        "type": "string",
+                        "example": "100,000"
+                      },
+                      "Deaths_as_percentage_of_population": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 2.80
+                      },
+                      "Average_Deaths_as_percentage_of_population": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 2.80
+                      },
+                      "Military_wounded": {
+                        "type": "string",
+                        "example": "39,803"
+                      }
+                    },
+                    "required": [
+                      "Country",
+                      "Total_population",
+                      "Military_deaths",
+                      "Civilian_deaths",
+                      "Total_deaths",
+                      "Deaths_as_percentage_of_population",
+                      "Average_Deaths_as_percentage_of_population",
+                      "Military_wounded"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
